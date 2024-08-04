@@ -1,7 +1,7 @@
 # -------------------
 # The build container
 # -------------------
-FROM python:3.9-bullseye AS build
+FROM python:3.12-bullseye AS build
 
 # Upgrade base packages.
 RUN apt-get update && \
@@ -36,7 +36,7 @@ RUN unzip /root/cusf_predictor_wrapper-master.zip -d /root && \
 # -------------------------
 # The application container
 # -------------------------
-FROM python:3.9-slim-bullseye
+FROM python:3.12-slim-bullseye
 EXPOSE 5001/tcp
 
 # Upgrade base packages and install application dependencies.
